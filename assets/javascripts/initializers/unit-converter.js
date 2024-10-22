@@ -27,7 +27,7 @@ function initializeConverter(api) {
 					return;
 				}
 
-				const pattern = new RegExp("(?<value>\\d+/\\d+|(?:\\d*\\.)?\\d+)\\s*" + matcher.pattern + "\\b", "ig");
+				const pattern = new RegExp("(?<value>\\d+/\\d+|(?:\\d*\\.)?\\d+)\\s*" + matcher.pattern, "ig");
 
 				let match;
 				while((match = pattern.exec(node.nodeValue)) !== null) {
