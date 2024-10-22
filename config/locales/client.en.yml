@@ -5,5 +5,10 @@ en:
         categories:
           TODO_plugin_name: "Plugin Name"
   js:
-    discourse_plugin_name:
-      placeholder: placeholder
+    unit_converter:
+      preference_heading: "Unit Converter"
+      preference_label: "Choose what type of units you'd like to have automatically converted:"
+      preference_all: "All"
+      preference_none: "None"
+      preference_metric: "Metric"
+      preference_imperial: "Imperial"
