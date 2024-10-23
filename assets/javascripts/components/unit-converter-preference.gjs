@@ -33,13 +33,13 @@ export default class UnitConverterPreference extends Component {
         <label for="unit-converter-preference">
           {{i18n "unit_converter.preference_label"}}
         </label>
-		<ComboBox
-              @id="unit-converter-preference"
-              @content={{this.dropdownOptions}}
-              @onChange={{this.onChangeUnitConverterPreference}}
-              @value={{this.unitConverterPreference}}
-              @valueProperty="value"
-            />
+        <ComboBox
+          @id="unit-converter-preference"
+          @content={{this.dropdownOptions}}
+          @onChange={{this.onChangeUnitConverterPreference}}
+          @value={{this.unitConverterPreference}}
+          @valueProperty="value"
+        />
       </div>
     </div>
   </template>
