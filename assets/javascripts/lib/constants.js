@@ -6,16 +6,16 @@ function rounder(value) {
 
 export const MATCHERS = [
 	{
-		pattern: "((°|deg(ree)?s?)?\\s*f(a(h?)hrenheit)?|℉)",
+		pattern: "((°|deg(ree)?s?)\\s*f(ahrenheit)?|℉|f(ahrenheit)?)",
 		unit: 'fahrenheit',
 		unitType: 'imperial',
-		convert: (value) => rounder((value * 9 / 5) + 32) + " ℃",
+		convert: (value) => rounder((value - 32) * 5 / 9) + " ℃",
 	},
 	{
-		pattern: "((°|deg(ree)?s?)?\\s*c(elsius|)?|℃)",
+		pattern: "((°|deg(ree)?s?)\\s*c(elsius)?|℃|c(elsius)?)",
 		unit: 'celsius',
 		unitType: 'metric',
-		convert: (value) => rounder((value - 32) * 5 / 9) + " ℉",
+		convert: (value) => rounder((value * 9 / 5) + 32) + " ℉",
 	},
 	{
 		pattern: "(tsps?\\.?|teaspoons?)",
