@@ -6,13 +6,13 @@ function rounder(value) {
 
 export const MATCHERS = [
   {
-    pattern: "((°|deg(ree)?s?)\\s*f(ahrenheit)?|℉|f(ahrenheit)?)",
+    pattern: "((°|deg(ree)?s?)\\s*f(ahrenheit)?|℉)",
     unit: "fahrenheit",
     unitType: "imperial",
     convert: (value) => rounder(((value - 32) * 5) / 9) + " ℃",
   },
   {
-    pattern: "((°|deg(ree)?s?)\\s*c(elsius)?|℃|c(elsius)?)",
+    pattern: "((°|deg(ree)?s?)\\s*c(elsius)?|℃)",
     unit: "celsius",
     unitType: "metric",
     convert: (value) => rounder((value * 9) / 5 + 32) + " ℉",
@@ -96,31 +96,31 @@ export const MATCHERS = [
     convert: (value) => rounder(value * 2.54) + " cm",
   },
   {
-    pattern: "ft|feet",
+    pattern: "(ft|feet)",
     unit: "foot",
     unitType: "imperial",
     convert: (value) => rounder(value * 0.3048) + " m",
   },
   {
-    pattern: "yd|yards?",
+    pattern: "(yd|yards?)",
     unit: "yard",
     unitType: "imperial",
     convert: (value) => rounder(value * 0.9144) + " m",
   },
   {
-    pattern: "mi|miles?",
+    pattern: "(mi|miles?)",
     unit: "mile",
     unitType: "imperial",
     convert: (value) => rounder(value * 1.60934) + " km",
   },
   {
-    pattern: "mm|millimeters?",
+    pattern: "(mm|millimeters?)",
     unit: "millimeter",
     unitType: "metric",
     convert: (value) => rounder(value * 0.0393701) + " in",
   },
   {
-    pattern: "cm|centimeters?",
+    pattern: "(cm|centimeters?)",
     unit: "centimeter",
     unitType: "metric",
     convert: (value) => rounder(value * 0.393701) + " in",
@@ -132,7 +132,7 @@ export const MATCHERS = [
     convert: (value) => rounder(value * 3.28084) + " ft",
   },
   {
-    pattern: "km|kilometers?",
+    pattern: "(km|kilometers?)",
     unit: "kilometer",
     unitType: "metric",
     convert: (value) => rounder(value * 0.621371) + " mi",

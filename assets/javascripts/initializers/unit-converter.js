@@ -27,8 +27,16 @@ function initializeConverter(api) {
           return;
         }
 
+        // Temperature units have unicode characters, which mess up the word boundary check.
+        const wordBreak =
+          matcher.unit === "fahrenheit" || matcher.unit === "celsius"
+            ? ""
+            : "\\b";
+
         const pattern = new RegExp(
-          "(?<value>\\d+/\\d+|(?:\\d*\\.)?\\d+)\\s*" + matcher.pattern,
+          "(?<value>\\d+/\\d+|(?:\\d*\\.)?\\d+)\\s*" +
+            matcher.pattern +
+            wordBreak,
           "ig"
         );
 
@@ -56,7 +64,7 @@ function initializeConverter(api) {
       if (textReplacements.length > 0) {
         const newText = textReplacements.reduce(
           (text, replacement) =>
-            text.replace(replacement.match, replacement.replacement),
+            text.replaceAll(replacement.match, replacement.replacement),
           node.nodeValue
         );
 
