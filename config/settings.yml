@@ -1,4 +1,4 @@
-unit_converter:
+plugins:
   unit_converter_enabled:
     default: true
     client: true

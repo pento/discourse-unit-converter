@@ -1,1 +1,3 @@
 en:
+  site_settings:
+    unit_converter_enabled: "Enable the unit converter plugin"
